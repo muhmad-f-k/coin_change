@@ -9,11 +9,16 @@ class Change:
     def find_min_change(sum: int, coins=list[int]) -> int:
         # default value [sum +1 ] and initialize array from 0 to sum + 1 | # Max value will be sum + 1 -  1 040 528 +1
         dp = [sum + 1] * (sum + 1)
+        # create max value - Add 1 since it start at index 0
+        #dp = [int for x in range(len(sum)+1)]
         dp[0] = 0  # Using tabulaion then start value from 0 at index 0
         # Loop the sum from 1 to sum + 1 so since is tabulation its reversed
         for i in range(1, sum + 1):
             for j in coins:  # loop throw every coin in the coin list
                 if i - j >= 0:  # this if statment just to check that dont have negativ value
-                    # As long if statment is true will keep searching
-                    dp[i] = min(dp[i], 1 + dp[i - j])
+                    # So here it check will searching if dp[i -j] +1 is less then min(dp[i]) if it true then it will update if not true will keep old value.
+                    dp[i] = min(dp[i], dp[i - j] + 1)
         return dp[sum]  # return min. DP wich this answer looking for.
+
+
+print(Change.find_min_change(1040528, [1, 5, 10, 20]))

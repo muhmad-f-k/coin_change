@@ -11,9 +11,9 @@ class TestReturnValue(unittest.TestCase):
 
     def return_min_sum_of_3(self):
         self.assertEqual(
-            3, self.__find_change.find_min_change(12, [1, 2, 3, 4, 5]))
+            3, self.__find_change.find_min_change(20, [1, 2, 3, 4, 5]))
 
-    def eturn_min_sum_of_52030(self):
+    def return_min_sum_of_52030(self):
         self.assertEqual(52030, self.__find_change.find_min_change(
             1040528, [1, 5, 10, 20]))
 
