@@ -6,8 +6,8 @@ class Change:
     # Need to find - outputs the minimum number of coins that sum up to s-
 
     # This method takes sum as a int and coins as a list of int, this done just to make it esay to see what the method takes in and what expected the output wich is int
-    def fin_min_change(sum: int, coins=list[int]) -> int:
-        # defualt value [sum +1 ] and initialize array from 0 to sum + 1 | # Max vaule will be sum + 1 -  1 040 528 +1
+    def find_min_change(sum: int, coins=list[int]) -> int:
+        # default value [sum +1 ] and initialize array from 0 to sum + 1 | # Max value will be sum + 1 -  1 040 528 +1
         dp = [sum + 1] * (sum + 1)
         dp[0] = 0  # Using tabulaion then start value from 0 at index 0
         # Loop the sum from 1 to sum + 1 so since is tabulation its reversed
